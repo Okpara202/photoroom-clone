@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TT Photoroom — Photoroom's proprietary brand font, loaded from their CDN.
+   Used here for visual fidelity in this clone. Swap to a free alternative
+   (e.g. Inter Display, Geist) for any production / non-educational use. */
+@font-face {
+  font-family: "TT Photoroom";
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://font-cdn.photoroom.com/fonts/tt-photoroom/TT_Photoroom_Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "TT Photoroom";
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://font-cdn.photoroom.com/fonts/tt-photoroom/TT_Photoroom_Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "TT Photoroom";
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://font-cdn.photoroom.com/fonts/tt-photoroom/TT_Photoroom_DemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "TT Photoroom";
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://font-cdn.photoroom.com/fonts/tt-photoroom/TT_Photoroom_Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "TT Photoroom";
+  font-weight: 800;
+  font-display: swap;
+  src: url("https://font-cdn.photoroom.com/fonts/tt-photoroom/TT_Photoroom_ExtraBold.woff2") format("woff2");
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f1011;
+
+  /* Photoroom brand accent (extracted from production CSS) */
+  --accent-300: #6161f2;
+  --accent-400: #4d3de3;
+  --accent-500: #410cd9;
+  --accent-600: #280197;
+
+  /* Photoroom neutrals (light theme) */
+  --neutral-0: #ffffff;
+  --neutral-50: #f9f9f9;
+  --neutral-100: #f2f2f2;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d9d9d9;
+  --neutral-400: #b5b5b5;
+  --neutral-500: #a1a1a1;
+  --neutral-600: #8a8a8a;
+  --neutral-700: #6b6b6b;
+  --neutral-800: #474747;
+  --neutral-900: #1a1a1a;
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "TT Photoroom", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  /* Photoroom body copy is solid neutral-700 (#6b6b6b), not gradient.
+     Kept as a utility class so swaps stay one line. */
+  .body-muted {
+    color: #6b6b6b;
+  }
+
+  .hero-gradient-bg {
+    background: linear-gradient(135deg, #ece6f7 0%, #f7f1fb 45%, #fef1ea 100%);
+  }
+
+  /* Real Photoroom final-CTA gradient (extracted from production CSS) */
+  .final-cta-gradient {
+    background: linear-gradient(
+      #010518 0%,
+      #041031 15.16%,
+      #12346b 40.38%,
+      #265b9e 57.21%,
+      #81b7e6 83.17%,
+      #e7f7ff 100%
+    );
+  }
+
+  /* Real Photoroom brand purple→pink gradient */
+  .brand-gradient {
+    background: linear-gradient(to bottom right, #410cd9, #f68efe);
+  }
+}
